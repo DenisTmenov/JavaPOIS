@@ -1,5 +1,7 @@
 package com.denis.bsu.lab03;
 
+import java.util.StringJoiner;
+
 public class DataTypeTester {
 
 	public static void testByte() {
@@ -1065,6 +1067,26 @@ public class DataTypeTester {
 				"операция исключающее ИЛИ \"^\" – результат равен true, только, если операнды не равны друг другу, иначе результат – false.");
 		System.out.printf("a = %b, b = %b, a ^ b = %b\n", a, b, a ^ b);
 		System.out.println("--------------------------\n");
+	}
+
+	public static void testStudent() {
+		Student studentKB = new Student();
+		studentKB.setAge(22);
+		studentKB.setName("Kostia");
+		studentKB.setSurename("Bukin");
+		Student studentChP = new Student("Chijick", "Pijick", 19);
+		studentKB.sayPhrase("Hello everyone!!!!");
+		StringJoiner sj = new StringJoiner(" ");
+		sj.add("Hello. I am").add(studentChP.getName()).add(studentChP.getSurename() + ".").add("Let's be friends!");
+		studentChP.sayPhrase(sj.toString());
+		studentChP.setFriend(studentKB);
+		studentKB.setFriend(studentChP);
+
+		studentKB.startLern();
+		if (studentKB.isAlive() && studentKB.isLearn()) {
+			studentKB.sayPhrase("I am now beasy. I am learning Java.");
+		}
+
 	}
 
 }
