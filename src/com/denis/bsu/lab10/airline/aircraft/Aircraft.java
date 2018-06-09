@@ -1,0 +1,126 @@
+package com.denis.bsu.lab10.airline.aircraft;
+
+import com.denis.bsu.lab10.airline.interfaces.AircraftInt;
+
+import java.io.Serializable;
+
+public abstract class Aircraft implements AircraftInt, Serializable {
+
+    private static final long serialVersionUID = -8282884139572089197L;
+    private Engine engine;
+    private Carcas dimensions;
+    private Integer passengersCount;
+    private Integer cargoCapacity; // грузоподъемность
+    private Integer maxFuelCapacity;
+    private Integer maxTakeoffWeight; // максимальный взлетный вес
+    private Integer cruiseSpeed;
+    private String modelName;
+    private Integer maxFlightRange;
+
+    public Aircraft(Engine engine, Carcas dimensions, String modelName, Integer passengersCount, Integer cargoCapacity, Integer maxFuelCapacity,
+                    Integer maxTakeoffWeight, Integer cruiseSpeed, Integer maxFlightRange) {
+        this.engine = engine;
+        this.dimensions = dimensions;
+        this.modelName = modelName;
+        this.passengersCount = passengersCount;
+        this.cargoCapacity = cargoCapacity;
+        this.maxFuelCapacity = maxFuelCapacity;
+        this.maxTakeoffWeight = maxTakeoffWeight;
+        this.cruiseSpeed = cruiseSpeed;
+        this.maxFlightRange = maxFlightRange;
+    }
+
+    public Aircraft(String modelName) {
+        this(new Engine(), new Carcas(), modelName, 0, 0, 0, 0, 0, 0);
+    }
+
+    //<editor-fold desc="get & set">
+    public Engine getEngine() {
+        return engine;
+    }
+
+    public Carcas getDimensions() {
+        return dimensions;
+    }
+
+    public Integer getPassengersCount() {
+        return passengersCount;
+    }
+
+    public Integer getCargoCapacity() {
+        return cargoCapacity;
+    }
+
+    public Integer getMaxFuelCapacity() {
+        return maxFuelCapacity;
+    }
+
+    public Integer getMaxTakeoffWeight() {
+        return maxTakeoffWeight;
+    }
+
+    public Integer getCruiseSpeed() {
+        return cruiseSpeed;
+    }
+
+    public String getModelName() {
+        return modelName;
+    }
+
+    public void setModelName(String modelName) {
+        this.modelName = modelName;
+    }
+
+    public Integer getMaxFlightRange() {
+        return maxFlightRange;
+    }
+
+    public void setMaxFlightRange(Integer maxFlightRange) {
+        this.maxFlightRange = maxFlightRange;
+    }
+
+    public void setEngine(Engine engine) {
+        this.engine = engine;
+    }
+
+    public void setDimensions(Carcas dimensions) {
+        this.dimensions = dimensions;
+    }
+
+    public void setPassengersCount(Integer passengersCount) {
+        this.passengersCount = passengersCount;
+    }
+
+    public void setCargoCapacity(Integer cargoCapacity) {
+        this.cargoCapacity = cargoCapacity;
+    }
+
+    public void setMaxFuelCapacity(Integer maxFuelCapacity) {
+        this.maxFuelCapacity = maxFuelCapacity;
+    }
+
+    public void setMaxTakeoffWeight(Integer maxTakeoffWeight) {
+        this.maxTakeoffWeight = maxTakeoffWeight;
+    }
+
+    public void setCruiseSpeed(Integer cruiseSpeed) {
+        this.cruiseSpeed = cruiseSpeed;
+    }
+    //</editor-fold>
+
+
+    @Override
+    public String toString() {
+        return "Aircraft{" +
+                "engine=" + engine +
+                ", dimensions=" + dimensions +
+                ", passengersCount=" + passengersCount +
+                ", cargoCapacity=" + cargoCapacity +
+                ", maxFuelCapacity=" + maxFuelCapacity +
+                ", maxTakeoffWeight=" + maxTakeoffWeight +
+                ", cruiseSpeed=" + cruiseSpeed +
+                ", modelName='" + modelName + '\'' +
+                ", maxFlightRange=" + maxFlightRange +
+                '}';
+    }
+}
