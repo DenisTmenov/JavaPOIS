@@ -14,11 +14,18 @@ public class PassengerAircraft extends Aircraft {
     public PassengerAircraft(Engine engine, Carcas dimensions, String modelName, Integer passengersCount, Integer bearingCapacity, Integer maxFuelCapacity,
                              Integer maxTakeoffWeight, Integer cruiseSpeed, Integer maxFlightRange) {
         super(engine, dimensions, modelName, passengersCount, bearingCapacity, maxFuelCapacity, maxTakeoffWeight, cruiseSpeed, maxFlightRange);
+        baggage = 0;
     }
 
     public PassengerAircraft(Engine engine, Carcas dimensions, String modelName, Integer passengersCount, Integer bearingCapacity, Integer maxFuelCapacity,
-                             Integer maxTakeoffWeight, Integer cruiseSpeed, Integer maxFlightRange, Integer Baggage) {
+                             Integer maxTakeoffWeight, Integer cruiseSpeed, Integer maxFlightRange, Integer baggage) {
         super(engine, dimensions, modelName, passengersCount, bearingCapacity, maxFuelCapacity, maxTakeoffWeight, cruiseSpeed, maxFlightRange);
+        this.baggage = baggage;
+    }
+
+
+    public PassengerAircraft(String modelName) {
+        this(new Engine(), new Carcas(), modelName, 0, 0, 0, 0, 0, 0);
     }
 
     @Override

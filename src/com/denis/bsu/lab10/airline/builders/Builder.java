@@ -1,9 +1,10 @@
 package com.denis.bsu.lab10.airline.builders;
 
-import com.denis.bsu.lab10.airline.utils.Utils;
 import com.denis.bsu.lab10.airline.aircraft.Aircraft;
+import com.denis.bsu.lab10.airline.interfaces.BuilderInt;
+import com.denis.bsu.lab10.airline.utils.Utils;
 
-public class Builder extends AbstractBuilder {
+public class Builder implements BuilderInt {
     private static final long serialVersionUID = -4345854930073035926L;
 
     @Override

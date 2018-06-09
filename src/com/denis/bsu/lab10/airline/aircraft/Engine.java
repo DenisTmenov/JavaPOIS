@@ -5,7 +5,7 @@ import com.denis.bsu.lab10.airline.utils.Utils;
 import java.io.Serializable;
 import java.util.Objects;
 
-public class Engine implements Serializable {
+public class Engine implements Serializable, Comparable<Engine> {
 
     private static final long serialVersionUID = 8203265214968527756L;
     private String modelName;
@@ -71,5 +71,10 @@ public class Engine implements Serializable {
                 "modelName='" + modelName + '\'' +
                 ", maxEngineThrust=" + maxEngineThrust +
                 '}';
+    }
+
+    @Override
+    public int compareTo(Engine o) {
+        return maxEngineThrust > o.maxEngineThrust ? 1 : maxEngineThrust.equals(o.maxEngineThrust) ? 0 : 1;
     }
 }

@@ -7,5 +7,5 @@ abstract class AbstractFactory {
 
     abstract public CargoAircraft createRandomCargoAircraft();
 
-    abstract public PassengerAircraft createRandomPassagerAircraft();
+    abstract public PassengerAircraft createRandomPassengerAircraft();
 }

@@ -3,6 +3,7 @@ package com.denis.bsu.lab10.airline.utils;
 import com.denis.bsu.lab10.airline.aircraft.Aircraft;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class AircraftList extends ArrayList<Aircraft> {
     private static final long serialVersionUID = 3217102877728949601L;
@@ -11,6 +12,10 @@ public class AircraftList extends ArrayList<Aircraft> {
 
     public AircraftList() {
         super(DEFAULT_CAPACITY);
+    }
+
+    public AircraftList(List<Aircraft> list){
+        this.addAll(list);
     }
 
 }

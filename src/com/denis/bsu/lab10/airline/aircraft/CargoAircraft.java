@@ -23,6 +23,10 @@ public class CargoAircraft extends Aircraft {
         this.cargo = cargo;
     }
 
+    public CargoAircraft(String modelName) {
+        this(new Engine(), new Carcas(), modelName, 0, 0, 0, 0, 0, 0);
+    }
+
     @Override
     public void flightTo(String destination) {
         System.out.println("Flying to: " + destination);

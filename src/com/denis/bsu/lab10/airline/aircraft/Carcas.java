@@ -5,7 +5,7 @@ import com.denis.bsu.lab10.airline.utils.Utils;
 import java.io.Serializable;
 import java.util.Objects;
 
-public class Carcas implements Serializable {
+public class Carcas implements Serializable, Comparable<Carcas> {
     private static final long serialVersionUID = 146522059781657552L;
 
     private Double wingSpan; // размах крыла (м)
@@ -55,5 +55,12 @@ public class Carcas implements Serializable {
                 ", tailHeight=" + tailHeight +
                 ", internalWidthSalon=" + internalWidthSalon +
                 '}';
+    }
+
+    @Override
+    public int compareTo(Carcas o) {
+        double entity = wingSpan + fullLength + tailHeight + internalWidthSalon;
+        double object = o.wingSpan + o.fullLength + o.tailHeight + o.internalWidthSalon;
+        return entity > object ? 1 : entity == object ? 0 : 1;
     }
 }
