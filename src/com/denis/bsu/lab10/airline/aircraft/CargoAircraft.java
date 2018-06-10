@@ -11,6 +11,11 @@ public class CargoAircraft extends Aircraft {
 
     private Integer cargo;
 
+    public CargoAircraft() {
+        super();
+        cargo = 0;
+    }
+
     public CargoAircraft(Engine engine, Carcas dimensions, String modelName, Integer passengersCount, Integer bearingCapacity, Integer maxFuelCapacity,
                          Integer maxTakeoffWeight, Integer cruiseSpeed, Integer maxFlightRange) {
         super(engine, dimensions, modelName, passengersCount, bearingCapacity, maxFuelCapacity, maxTakeoffWeight, cruiseSpeed, maxFlightRange);

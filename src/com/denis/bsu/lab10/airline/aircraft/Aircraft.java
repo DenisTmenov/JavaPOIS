@@ -1,6 +1,7 @@
 package com.denis.bsu.lab10.airline.aircraft;
 
 import com.denis.bsu.lab10.airline.interfaces.AircraftInt;
+import com.denis.bsu.lab10.airline.utils.Utils;
 
 import java.io.Serializable;
 
@@ -16,6 +17,18 @@ public abstract class Aircraft implements AircraftInt, Serializable {
     private Integer cruiseSpeed;
     private String modelName;
     private Integer maxFlightRange;
+
+    public Aircraft(){
+        engine = new Engine();
+        dimensions = new Carcas();
+        passengersCount = 0;
+        cargoCapacity = 0;
+        maxFuelCapacity = 0;
+        maxTakeoffWeight = 0;
+        cruiseSpeed = 0;
+        modelName = "Aircraft - " + Utils.getRand().nextInt(1000);
+        maxFlightRange = 0;
+    }
 
     public Aircraft(Engine engine, Carcas dimensions, String modelName, Integer passengersCount, Integer cargoCapacity, Integer maxFuelCapacity,
                     Integer maxTakeoffWeight, Integer cruiseSpeed, Integer maxFlightRange) {

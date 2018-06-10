@@ -10,6 +10,10 @@ public class PassengerAircraft extends Aircraft {
 
     private Integer baggage;
 
+    public PassengerAircraft() {
+        super();
+        baggage = 0;
+    }
 
     public PassengerAircraft(Engine engine, Carcas dimensions, String modelName, Integer passengersCount, Integer bearingCapacity, Integer maxFuelCapacity,
                              Integer maxTakeoffWeight, Integer cruiseSpeed, Integer maxFlightRange) {

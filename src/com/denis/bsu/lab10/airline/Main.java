@@ -4,10 +4,7 @@ import com.denis.bsu.lab10.airline.company.Airline;
 import com.denis.bsu.lab10.airline.comparators.aircraft.AircraftEnum;
 import com.denis.bsu.lab10.airline.factory.DataManager;
 import com.denis.bsu.lab10.airline.queries.AircraftQuery;
-import com.denis.bsu.lab10.airline.utils.AircraftList;
-import com.denis.bsu.lab10.airline.utils.Printer;
-import com.denis.bsu.lab10.airline.utils.Searcher;
-import com.denis.bsu.lab10.airline.utils.Utils;
+import com.denis.bsu.lab10.airline.utils.*;
 
 public class Main {
     //        10) Авиакомпания (Airline).
@@ -22,9 +19,13 @@ public class Main {
 
         Airline bestCompany = new Airline("Best Company");
         _fillCompanyAircrafts(bestCompany);
+
         Printer.showAircraftsAirline(bestCompany);
+
         Printer.showFullPassengersCountAirline(bestCompany);
+
         Printer.showFullCargoAirline(bestCompany);
+
         Printer.showEachAircraftMaxFlightRange(bestCompany);
         bestCompany.sortAircrafrs(AircraftEnum.MAX_FLIGHT_RANGE);
         Printer.showEachAircraftMaxFlightRange(bestCompany);
@@ -32,12 +33,15 @@ public class Main {
         AircraftQuery query = new AircraftQuery();
         query.setCruiseSpeed(800);
         query.setCargoCapacity(20);
-        query.setMaxFlightRange(20000);
+        query.setMaxFlightRange(10000);
 
         AircraftList aircrafts = Searcher.searchAircrafts(query, bestCompany);
 
         Printer.showAircrafts(aircrafts);
 
+        IOWorker.writeAircraftsToFile(aircrafts, "test.txt");
+
+        Printer.showAircrafts(IOWorker.readAircraftsFromFile("test.txt"));
 
     }
 

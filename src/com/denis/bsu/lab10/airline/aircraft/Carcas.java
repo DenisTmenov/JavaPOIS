@@ -27,6 +27,40 @@ public class Carcas implements Serializable, Comparable<Carcas> {
         this.internalWidthSalon = internalWidthSalon;
     }
 
+    //<editor-fold desc="get & set">
+    public Double getWingSpan() {
+        return wingSpan;
+    }
+
+    public void setWingSpan(Double wingSpan) {
+        this.wingSpan = wingSpan;
+    }
+
+    public Double getFullLength() {
+        return fullLength;
+    }
+
+    public void setFullLength(Double fullLength) {
+        this.fullLength = fullLength;
+    }
+
+    public Double getTailHeight() {
+        return tailHeight;
+    }
+
+    public void setTailHeight(Double tailHeight) {
+        this.tailHeight = tailHeight;
+    }
+
+    public Double getInternalWidthSalon() {
+        return internalWidthSalon;
+    }
+
+    public void setInternalWidthSalon(Double internalWidthSalon) {
+        this.internalWidthSalon = internalWidthSalon;
+    }
+    //</editor-fold>
+
     @Override
     public boolean equals(Object o) {
         if (this == o) {
